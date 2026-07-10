@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+  <title>Orbital Panel Co. — Carbon Fiber Solar Panel Substrates for Space</title>
+  <meta name="description" content="Orbital Panel Co. manufactures precision carbon fiber solar panel substrates for the space industry — faster, lighter, and more cost-effective than legacy methods.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── FADE-IN ANIMATION ──────────────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── SAT DOT PULSE ──────────────────────────────────────── */
+    .sat-dot {
+      width: 8px; height: 8px;
+      background: #00c2e0;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px rgba(0,194,224,0.3), 0 0 8px rgba(0,194,224,0.7);
+      position: absolute;
+      animation: sat-pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes sat-pulse {
+      0%,100% { box-shadow: 0 0 0 2px rgba(0,194,224,0.3), 0 0 8px rgba(0,194,224,0.7); }
+      50%      { box-shadow: 0 0 0 4px rgba(0,194,224,0.15), 0 0 18px rgba(0,194,224,0.9); }
+    }
+
+    /* Satellite body shape (rendered as SVG inline) */
+    .sat-body {
+      position: absolute;
+      top: -14px; left: -14px;
+      width: 28px; height: 28px;
+    }
+
+    /* ── CSS IMAGE PANELS ───────────────────────────────────── */
+    /* Section 1 — Carbon fiber weave pattern */
+    .img-cfrp {
+      height: 460px;
+      background:
+        repeating-linear-gradient(
+          45deg,
+          rgba(0,80,160,0.12) 0px, rgba(0,80,160,0.12) 1px,
+          transparent 1px, transparent 12px
+        ),
+        repeating-linear-gradient(
+          -45deg,
+          rgba(0,140,200,0.08) 0px, rgba(0,140,200,0.08) 1px,
+          transparent 1px, transparent 12px
+        ),
+        linear-gradient(160deg, #050f1e 0%, #0a1e3a 40%, #071628 100%);
+      border: 1px solid rgba(0,194,224,0.12);
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+    }
+
+    /* Section 2 — Clean room / testing environment */
+    .img-test {
+      height: 460px;
+      background:
+        radial-gradient(ellipse at 30% 60%, rgba(0,50,120,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 30%, rgba(0,100,180,0.3) 0%, transparent 50%),
+        linear-gradient(170deg, #020810 0%, #081428 50%, #040c1c 100%);
+      border: 1px solid rgba(0,194,224,0.12);
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .img-test::before {
+      content: '';
+      position: absolute;
+      top: 20%; left: 10%;
+      width: 80%; height: 60%;
+      border: 1px solid rgba(0,194,224,0.12);
+      border-radius: 50%;
+    }
+    .img-test::after {
+      content: '';
+      position: absolute;
+      top: 32%; left: 22%;
+      width: 55%; height: 36%;
+      border: 1px solid rgba(0,194,224,0.08);
+      border-radius: 50%;
+    }
+
+    /* Section 3 — Solar array substrate */
+    .img-solar {
+      height: 340px;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          rgba(0,194,224,0.07) 0px, rgba(0,194,224,0.07) 1px,
+          transparent 1px, transparent 40px
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(0,194,224,0.05) 0px, rgba(0,194,224,0.05) 1px,
+          transparent 1px, transparent 40px
+        ),
+        linear-gradient(145deg, #040c18 0%, #071626 60%, #030a14 100%);
+      border: 1px solid rgba(0,194,224,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Caption overlay on images */
+    .img-caption {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(0,194,224,0.6);
+      font-weight: 600;
+    }
+
+    /* Solar cell grid SVG in image panel */
+    .solar-grid {
+      width: 80%;
+      max-width: 320px;
+      opacity: 0.35;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       HEADER
+  ════════════════════════════════════════════════════════════ -->
+  <header>
+    <div class="logo">Orbital <span>Panel</span> Co.</div>
+    <nav>
+      <a href="#manufacturing">Manufacturing</a>
+      <a href="#testing">Testing</a>
+      <a href="#technology">Technology</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════════════════════ -->
+  <section class="hero">
+
+    <!-- Left: text -->
+    <div class="hero-text">
+      <span class="overline">Advanced Space Manufacturing</span>
+      <h1>Orbital<br><em>Panel Co.</em></h1>
+      <p>
+        Precision carbon fiber solar panel substrates for the next generation
+        of orbital spacecraft. Faster to produce, lighter in orbit, and built
+        for constellation-scale demand.
+      </p>
+      <a href="#manufacturing" class="btn">Our Technology</a>
+      <a href="#contact" class="btn btn-solid">Get in Touch</a>
+    </div>
+
+    <!-- Right: Three.js globe + CSS orbiting satellites -->
+    <div class="globe-container">
+      <canvas id="globe-canvas"></canvas>
+
+      <!-- CSS orbit rings with satellite bodies -->
+      <div class="orbit-wrapper">
+
+        <!-- Orbit 1 -->
+        <div class="orbit orbit-1">
+          <div class="satellite">
+            <div class="sat-dot"></div>
+            <svg class="sat-body" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Satellite bus -->
+              <rect x="10" y="11" width="8" height="6" fill="#00c2e0" opacity="0.9" rx="0.5"/>
+              <!-- Solar panels left -->
+              <rect x="2"  y="12.5" width="7" height="3" fill="#1a6aff" opacity="0.85" rx="0.3"/>
+              <line x1="3" y1="13" x2="3" y2="15.5" stroke="rgba(0,194,224,0.4)" stroke-width="0.5"/>
+              <line x1="5" y1="13" x2="5" y2="15.5" stroke="rgba(0,194,224,0.4)" stroke-width="0.5"/>
+              <line x1="7" y1="13" x2="7" y2="15.5" stroke="rgba(0,194,224,0.4)" stroke-width="0.5"/>
+              <!-- Solar panels right -->
+              <rect x="19" y="12.5" width="7" height="3" fill="#1a6aff" opacity="0.85" rx="0.3"/>
+              <line x1="20" y1="13" x2="20" y2="15.5" stroke="rgba(0,194,224,0.4)" stroke-width="0.5"/>
+              <line x1="22" y1="13" x2="22" y2="15.5" stroke="rgba(0,194,224,0.4)" stroke-width="0.5"/>
+              <line x1="24" y1="13" x2="24" y2="15.5" stroke="rgba(0,194,224,0.4)" stroke-width="0.5"/>
+              <!-- Antenna -->
+              <line x1="14" y1="11" x2="14" y2="7" stroke="#00c2e0" stroke-width="0.8" opacity="0.7"/>
+              <circle cx="14" cy="6.5" r="1" fill="none" stroke="#00c2e0" stroke-width="0.6" opacity="0.6"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Orbit 2 -->
+        <div class="orbit orbit-2">
+          <div class="satellite">
+            <div class="sat-dot"></div>
+            <svg class="sat-body" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="11" y="12" width="6" height="4" fill="#00c2e0" opacity="0.85" rx="0.5"/>
+              <rect x="3"  y="12.5" width="7" height="3" fill="#1a6aff" opacity="0.8" rx="0.3"/>
+              <line x1="4" y1="13" x2="4" y2="15.5" stroke="rgba(0,194,224,0.4)" stroke-width="0.5"/>
+              <line x1="6" y1="13" x2="6" y2="15.5" stroke="rgba(0,194,224,0.4)" stroke-width="0.5"/>
+              <line x1="8" y1="13" x2="8" y2="15.5" stroke="rgba(0,194,224,0.4)" stroke-width="0.5"/>
+              <rect x="18" y="12.5" width="7" height="3" fill="#1a6aff" opacity="0.8" rx="0.3"/>
+              <line x1="19" y1="13" x2="19" y2="15.5" stroke="rgba(0,194,224,0.4)" stroke-width="0.5"/>
+              <line x1="21" y1="13" x2="21" y2="15.5" stroke="rgba(0,194,224,0.4)" stroke-width="0.5"/>
+              <line x1="23" y1="13" x2="23" y2="15.5" stroke="rgba(0,194,224,0.4)" stroke-width="0.5"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Orbit 3 — smaller cubesat -->
+        <div class="orbit orbit-3">
+          <div class="satellite">
+            <div class="sat-dot" style="width:6px;height:6px;top:1px;left:1px;"></div>
+            <svg class="sat-body" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="12" y="12" width="4" height="4" fill="#00c2e0" opacity="0.9" rx="0.3"/>
+              <rect x="4"  y="12.5" width="7" height="3" fill="#1a6aff" opacity="0.75" rx="0.2"/>
+              <rect x="17" y="12.5" width="7" height="3" fill="#1a6aff" opacity="0.75" rx="0.2"/>
+              <line x1="5" y1="13" x2="5" y2="15.5" stroke="rgba(0,194,224,0.35)" stroke-width="0.5"/>
+              <line x1="7" y1="13" x2="7" y2="15.5" stroke="rgba(0,194,224,0.35)" stroke-width="0.5"/>
+              <line x1="9" y1="13" x2="9" y2="15.5" stroke="rgba(0,194,224,0.35)" stroke-width="0.5"/>
+              <line x1="18" y1="13" x2="18" y2="15.5" stroke="rgba(0,194,224,0.35)" stroke-width="0.5"/>
+              <line x1="20" y1="13" x2="20" y2="15.5" stroke="rgba(0,194,224,0.35)" stroke-width="0.5"/>
+              <line x1="22" y1="13" x2="22" y2="15.5" stroke="rgba(0,194,224,0.35)" stroke-width="0.5"/>
+            </svg>
+          </div>
+        </div>
+
+      </div><!-- /.orbit-wrapper -->
+    </div><!-- /.globe-container -->
+
+  </section><!-- /.hero -->
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       STATS BAR
+  ════════════════════════════════════════════════════════════ -->
+  <div class="divider"></div>
+  <div class="stats-bar">
+    <div class="stat">
+      <span class="stat-number" data-count="30" data-suffix="%" data-dur="1600">30%</span>
+      <span class="stat-label">Lower Cost Per Unit</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-count="50" data-suffix="%" data-dur="1700">50%</span>
+      <span class="stat-label">Faster Production Cycle</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-count="15" data-suffix="%" data-dur="1500">15%</span>
+      <span class="stat-label">Weight Reduction</span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" data-count="100" data-suffix="%" data-dur="1800">100%</span>
+      <span class="stat-label">Automated Layup Process</span>
+    </div>
+  </div>
+  <div class="divider"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 1 — SUBSTRATE MANUFACTURING
+  ════════════════════════════════════════════════════════════ -->
+  <section class="section" id="manufacturing">
+    <div class="section-inner fade-in">
+
+      <div class="section-text">
+        <span class="section-label">Core Product</span>
+        <h2>Substrate<br><span>Manufacturing</span></h2>
+        <span class="section-eyebrow">Precision Carbon Fiber</span>
+        <h3>Built for the Constellation Era</h3>
+        <p>
+          Orbital Panel Co. manufactures carbon fiber reinforced polymer (CFRP) solar
+          array substrate panels — the structural backbone onto which solar cells are
+          mounted in every satellite. Our automated layup process eliminates the
+          manual, labor-intensive methods that constrain legacy suppliers.
+        </p>
+        <p>
+          Designed specifically for mega-constellation production volumes, our substrates
+          deliver aerospace-grade dimensional accuracy, radiation tolerance, and thermal
+          stability at a fraction of incumbent lead times.
+        </p>
+        <ul class="feature-list">
+          <li>Automated fiber placement — zero manual layup</li>
+          <li>Tight CTE control matched to III-V and silicon cell materials</li>
+          <li>Constellation-scale production capacity</li>
+          <li>Full traceability and quality documentation for ITAR programs</li>
+          <li>Standard and custom panel geometries</li>
+        </ul>
+
+        <div class="metrics-band">
+          <div class="metric">
+            <span class="metric-val" data-count="3" data-suffix="x" data-dur="1400">3x</span>
+            <span class="metric-desc">Throughput vs. Hand Layup</span>
+          </div>
+          <div class="metric">
+            <span class="metric-val" data-count="48" data-suffix="hr" data-dur="1600">48hr</span>
+            <span class="metric-desc">Typical Cure Cycle</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-image">
+        <div class="img-cfrp">
+          <span class="img-caption">CFRP Substrate Panel — Automated Layup</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 2 — QUALITY & TESTING
+  ════════════════════════════════════════════════════════════ -->
+  <section class="section alt" id="testing">
+    <div class="section-inner reverse fade-in">
+
+      <div class="section-text">
+        <span class="section-label">Quality Assurance</span>
+        <h2>Testing &amp;<br><span>Certification</span></h2>
+        <span class="section-eyebrow">Flight Heritage</span>
+        <h3>Space-Qualified at Every Step</h3>
+        <p>
+          Every substrate Orbital Panel Co. produces undergoes rigorous environmental
+          and mechanical verification before delivery. Our quality regime is built
+          around the same standards demanded by the programs we serve.
+        </p>
+        <p>
+          We perform thermal cycling, vibration, acoustic, and outgassing testing
+          in-house, with full dimensional inspection and non-destructive evaluation
+          at each stage of production.
+        </p>
+        <ul class="feature-list">
+          <li>Thermal vacuum and thermal cycling per MIL-STD-810</li>
+          <li>Vibration and shock qualification</li>
+          <li>Flatness &amp; bond line inspection via laser metrology</li>
+          <li>Outgassing testing per ASTM E595</li>
+          <li>100% ultrasonic C-scan inspection for delamination</li>
+        </ul>
+
+        <a href="#contact" class="btn">Request Qualification Data</a>
+      </div>
+
+      <div class="section-image">
+        <div class="img-test">
+          <span class="img-caption">Environmental Testing — Thermal Vacuum Chamber</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       SECTION 3 — TECHNOLOGY
+  ════════════════════════════════════════════════════════════ -->
+  <section class="section" id="technology">
+    <div class="section-inner fade-in">
+
+      <div class="section-text">
+        <span class="section-label">Innovation</span>
+        <h2>Materials &amp;<br><span>Process Technology</span></h2>
+        <span class="section-eyebrow">Proprietary Methods</span>
+        <h3>The Process Advantage</h3>
+        <p>
+          The performance of a solar array substrate is determined not just by
+          the carbon fiber material, but by how precisely the layup variables —
+          fiber angle, resin content, cure pressure, and thermal ramp rates — are
+          controlled throughout production.
+        </p>
+        <p>
+          Orbital Panel Co. was founded specifically to commercialize a proprietary
+          understanding of how these process variables interact to produce substrates
+          that exceed existing performance benchmarks at lower cost.
+        </p>
+
+        <div class="tech-card" style="margin-top: 28px;">
+          <h4>Process Innovation</h4>
+          <h3>Automated Variable Optimization</h3>
+          <p>
+            Our manufacturing process applies real-time feedback control across
+            layup, cure, and post-process steps — eliminating the artisanal
+            variability that drives yield loss and qualification risk in
+            conventional substrate production.
+          </p>
+          <a href="#contact" class="btn">Inquire About Capabilities</a>
+        </div>
+      </div>
+
+      <div class="section-image">
+        <div class="img-solar">
+          <!-- Inline SVG solar cell grid illustration -->
+          <svg class="solar-grid" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="cellGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1a6aff" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#0044aa" stop-opacity="0.7"/>
+              </linearGradient>
+              <linearGradient id="panelGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0a1e3a"/>
+                <stop offset="100%" stop-color="#040c18"/>
+              </linearGradient>
+            </defs>
+            <!-- Panel substrate -->
+            <rect x="10" y="10" width="300" height="200" fill="url(#panelGrad)" rx="2" stroke="#00c2e0" stroke-width="0.5" stroke-opacity="0.4"/>
+            <!-- Grid of solar cells -->
+            <!-- Row 1 -->
+            <rect x="20" y="20" width="55" height="40" fill="url(#cellGrad)" rx="1" opacity="0.85"/>
+            <rect x="82" y="20" width="55" height="40" fill="url(#cellGrad)" rx="1" opacity="0.85"/>
+            <rect x="144" y="20" width="55" height="40" fill="url(#cellGrad)" rx="1" opacity="0.85"/>
+            <rect x="206" y="20" width="55" height="40" fill="url(#cellGrad)" rx="1" opacity="0.85"/>
+            <rect x="268" y="20" width="42" height="40" fill="url(#cellGrad)" rx="1" opacity="0.85"/>
+            <!-- Row 2 -->
+            <rect x="20" y="68" width="55" height="40" fill="url(#cellGrad)" rx="1" opacity="0.8"/>
+            <rect x="82" y="68" width="55" height="40" fill="url(#cellGrad)" rx="1" opacity="0.8"/>
+            <rect x="144" y="68" width="55" height="40" fill="url(#cellGrad)" rx="1" opacity="0.8"/>
+            <rect x="206" y="68" width="55" height="40" fill="url(#cellGrad)" rx="1" opacity="0.8"/>
+            <rect x="268" y="68" width="42" height="40" fill="url(#cellGrad)" rx="1" opacity="0.8"/>
+            <!-- Row 3 -->
+            <rect x="20" y="116" width="55" height="40" fill="url(#cellGrad)" rx="1" opacity="0.75"/>
+            <rect x="82" y="116" width="55" height="40" fill="url(#cellGrad)" rx="1" opacity="0.75"/>
+            <rect x="144" y="116" width="55" height="40" fill="url(#cellGrad)" rx="1" opacity="0.75"/>
+            <rect x="206" y="116" width="55" height="40" fill="url(#cellGrad)" rx="1" opacity="0.75"/>
+            <rect x="268" y="116" width="42" height="40" fill="url(#cellGrad)" rx="1" opacity="0.75"/>
+            <!-- Row 4 -->
+            <rect x="20" y="164" width="55" height="36" fill="url(#cellGrad)" rx="1" opacity="0.7"/>
+            <rect x="82" y="164" width="55" height="36" fill="url(#cellGrad)" rx="1" opacity="0.7"/>
+            <rect x="144" y="164" width="55" height="36" fill="url(#cellGrad)" rx="1" opacity="0.7"/>
+            <rect x="206" y="164" width="55" height="36" fill="url(#cellGrad)" rx="1" opacity="0.7"/>
+            <rect x="268" y="164" width="42" height="36" fill="url(#cellGrad)" rx="1" opacity="0.7"/>
+            <!-- Interconnect lines -->
+            <line x1="10" y1="64"  x2="310" y2="64"  stroke="#00c2e0" stroke-width="0.4" stroke-opacity="0.3"/>
+            <line x1="10" y1="112" x2="310" y2="112" stroke="#00c2e0" stroke-width="0.4" stroke-opacity="0.3"/>
+            <line x1="10" y1="160" x2="310" y2="160" stroke="#00c2e0" stroke-width="0.4" stroke-opacity="0.3"/>
+            <line x1="75"  y1="10" x2="75"  y2="210" stroke="#00c2e0" stroke-width="0.4" stroke-opacity="0.3"/>
+            <line x1="137" y1="10" x2="137" y2="210" stroke="#00c2e0" stroke-width="0.4" stroke-opacity="0.3"/>
+            <line x1="199" y1="10" x2="199" y2="210" stroke="#00c2e0" stroke-width="0.4" stroke-opacity="0.3"/>
+            <line x1="261" y1="10" x2="261" y2="210" stroke="#00c2e0" stroke-width="0.4" stroke-opacity="0.3"/>
+            <!-- Glow overlay -->
+            <rect x="10" y="10" width="300" height="200" fill="none" rx="2" stroke="#00c2e0" stroke-width="1" stroke-opacity="0.2"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONTACT / NEWSLETTER
+  ════════════════════════════════════════════════════════════ -->
+  <div class="contact-band" id="contact">
+    <div>
+      <h3>Stay Connected</h3>
+      <p>Product updates, industry news, and program announcements from Orbital Panel Co.</p>
+    </div>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input type="email" placeholder="Enter your email address" autocomplete="email">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-top">
+
+      <div>
+        <div class="footer-logo">Orbital Panel Co.</div>
+        <p class="footer-tagline">
+          Precision CFRP solar array substrates for the commercial and
+          defense space industry. Manufactured in the United States.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <address>
+          San Diego, CA<br>
+          <a href="mailto:info@orbitalpanel.co">info@orbitalpanel.co</a>
+        </address>
+      </div>
+
+      <div class="footer-col">
+        <h4>Capabilities</h4>
+        <p>
+          CFRP Substrate Manufacturing<br>
+          Honeycomb Sandwich Panels<br>
+          Solar Array Integration<br>
+          Environmental Testing<br>
+          Custom Geometries
+        </p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Orbital Panel Co. All rights reserved.</p>
+      <p>
+        <a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp;
+        <a href="#">Terms of Use</a>
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       SCRIPTS
+       Three.js r128 from cdnjs (public CDN — no account needed).
+       Earth textures load from unpkg (NASA Blue Marble, public domain).
+       For fully offline hosting: download three.min.js and the
+       three texture images, place in js/ and images/ folders,
+       and update the paths in js/main.js accordingly.
+  ════════════════════════════════════════════════════════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
